@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PublishPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo-placeholder.png" alt="PublishPro Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="software.html" class="nav-button active">Software</a>
+            <a href="devs.html" class="nav-button">Developers</a>
+            <a href="about-us.html" class="nav-button">About Us</a>
+            <a href="register.html" class="nav-button register-btn">Register</a>
+            <a href="login.html" class="nav-button login-btn">Login</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">Top Software</h1>
+        <div id="software-cards-container">
+            <ul class="software-cards">
+                <!-- Card 1 -->
+                <li class="software-card" data-rating="4.8" data-downloads="15200" data-name="codemaster pro">
+                    <div class="card-icon-wrapper">
+                        <div class="card-icon">💻</div>
+                        <div class="card-icon-info">
+                            <span class="data-rating" data-label="Rating">4.8</span>
+                            <span class="data-downloads" data-label="Downloads">15.2K</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h2>CodeMaster Pro <span class="developer">by DevTools Inc.</span></h2>
+                        </div>
+                        <p class="description">Advanced IDE with real-time collaboration, cloud compilation and AI-assisted coding</p>
+                    </div>
+                </li>
+
+                <!-- Card 2 -->
+                <li class="software-card" data-rating="4.9" data-downloads="9700" data-name="securevault">
+                    <div class="card-icon-wrapper">
+                        <div class="card-icon">🔐</div>
+                        <div class="card-icon-info">
+                            <span class="data-rating" data-label="Rating">4.9</span>
+                            <span class="data-downloads" data-label="Downloads">9.7K</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h2>SecureVault <span class="developer">by CyberShield</span></h2>
+                        </div>
+                        <p class="description">Military-grade encryption solution with multi-factor authentication</p>
+                    </div>
+                </li>
+
+                <!-- Card 3 -->
+                <li class="software-card" data-rating="4.6" data-downloads="23100" data-name="pixelartist">
+                    <div class="card-icon-wrapper">
+                        <div class="card-icon">🖼️</div>
+                        <div class="card-icon-info">
+                            <span class="data-rating" data-label="Rating">4.6</span>
+                            <span class="data-downloads" data-label="Downloads">23.1K</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h2>PixelArtist <span class="developer">by CreativeSuite</span></h2>
+                        </div>
+                        <p class="description">Professional raster graphics editor with layer support and 100+ filters</p>
+                    </div>
+                </li>
+
+                <!-- Card 4 -->
+                <li class="software-card" data-rating="4.7" data-downloads="5400" data-name="dataanalyzer">
+                    <div class="card-icon-wrapper">
+                        <div class="card-icon">📊</div>
+                        <div class="card-icon-info">
+                            <span class="data-rating" data-label="Rating">4.7</span>
+                            <span class="data-downloads" data-label="Downloads">5.4K</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h2>DataAnalyzer <span class="developer">by StatsLab</span></h2>
+                        </div>
+                        <p class="description">Statistical analysis software with R/Python integration and visualization tools</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
