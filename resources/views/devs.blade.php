@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PublishPro - Developers</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
+
+    @include('header')
     <!-- Main Content -->
     <main class="container">
         <h1 class="page-title">Developers Directory</h1>
-        
+
         <!-- Filters Section -->
         <div class="filters">
             <form class="search-form" id="dev-search-form">
-                <input type="text" 
-                       class="search-input" 
+                <input type="text"
+                       class="search-input"
                        placeholder="Search developers..."
                        name="q"
                        aria-label="Search developers">
@@ -85,6 +87,8 @@
             </ul>
         </div>
     </main>
+    @include('footer')
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -97,7 +101,7 @@
                 const sorted = devCards.sort((a, b) => {
                     const aVal = a.dataset[criteria];
                     const bVal = b.dataset[criteria];
-                    
+
                     if (criteria === 'alphabetical') {
                         return a.dataset.name.localeCompare(b.dataset.name);
                     }

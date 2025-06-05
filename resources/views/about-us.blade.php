@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PublishPro - About Us</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
+
+    @include('header')
     <!-- Main Content -->
     <main class="container">
         <h1 class="page-title">Information</h1>
-        
+
         <div class="content-block">
             <p>Our company specializes on delivering quality products for our consumers. Goal of this platform is to craete a place where everyone can easily share or get access to quality software</p>
         </div>
 
         <h2 class="policy-title">Privacy Policy</h2>
-        
+
         <div class="content-block policy-section">
             <p>1. Respect other users
 2. No malware allowed
@@ -24,5 +26,6 @@
         </div>
     </main>
 
+    @include('footer')
 </body>
 </html>

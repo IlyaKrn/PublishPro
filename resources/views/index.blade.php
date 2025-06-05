@@ -3,33 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PublishPro - Software Catalog</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PublishPro</title>
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
-    <!-- Main Content -->
+
+    @include('header')
     <main class="container">
-        <h1 class="page-title">Software Catalog</h1>
-        
-        <!-- Filters Section -->
-        <div class="filters">
-            <form class="search-form" id="search-form">
-                <input type="text" 
-                       class="search-input" 
-                       placeholder="Search software..."
-                       name="q"
-                       aria-label="Search software">
-                <button type="submit" class="search-button">Search</button>
-            </form>
-
-            <select class="sort-select" id="sort-select" aria-label="Sort software">
-                <option value="rating">Sort by Rating</option>
-                <option value="downloads">Sort by Downloads</option>
-                <option value="alphabetical">Sort A-Z</option>
-            </select>
-        </div>
-
-        <!-- Software Cards -->
+        <h1 class="page-title">Top Software</h1>
         <div id="software-cards-container">
             <ul class="software-cards">
                 <!-- Card 1 -->
@@ -102,49 +83,7 @@
             </ul>
         </div>
     </main>
+    @include('footer')
 
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = Array.from(document.querySelectorAll('.software-card'));
-            const sortSelect = document.getElementById('sort-select');
-            const searchForm = document.getElementById('search-form');
-            const searchInput = document.querySelector('.search-input');
-
-            // Sorting functionality
-            const sortCards = (criteria) => {
-                const sorted = cards.sort((a, b) => {
-                    const aVal = a.dataset[criteria];
-                    const bVal = b.dataset[criteria];
-                    
-                    if (criteria === 'alphabetical') {
-                        return a.dataset.name.localeCompare(b.dataset.name);
-                    }
-                    return parseFloat(bVal) - parseFloat(aVal);
-                });
-
-                document.querySelector('.software-cards').innerHTML = '';
-                sorted.forEach(card => document.querySelector('.software-cards').appendChild(card));
-            };
-
-            // Search functionality
-            const filterCards = (query) => {
-                cards.forEach(card => {
-                    const matches = card.dataset.name.includes(query.toLowerCase());
-                    card.style.display = matches ? 'flex' : 'none';
-                });
-            };
-
-            // Event listeners
-            sortSelect.addEventListener('change', (e) => sortCards(e.target.value));
-            
-            searchForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                filterCards(searchInput.value);
-            });
-
-            searchInput.addEventListener('input', () => filterCards(searchInput.value));
-        });
-    </script>
 </body>
 </html>
