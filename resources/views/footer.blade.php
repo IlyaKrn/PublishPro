@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-content container">
         <div class="footer-section">
-            <h3 class="footer-heading">Contact Us</h3>
+            <h3 class="footer-heading">Контактные Данные</h3>
             <ul class="contact-list">
                 <li class="contact-item">
                     <span class="contact-icon">📧</span>
@@ -11,11 +11,11 @@
                 </li>
                 <li class="contact-item">
                     <span class="contact-icon">📞</span>
-                    +1 (555) 123-4567
+                    +8 (8000) 555-35-35
                 </li>
                 <li class="contact-item">
                     <span class="contact-icon">📍</span>
-                    123 Tech Street, Silicon Valley, CA
+                    123 ул. Пролетариата, г. Черкаши
                 </li>
             </ul>
         </div>
@@ -23,7 +23,7 @@
 
     <div class="footer-bottom">
         <p class="copyright">
-            &copy; 2025 PublishProDevs. All rights reserved.
+            &copy; 2025 PublishProDevs. Все права защищены.
         </p>
     </div>
 </footer>

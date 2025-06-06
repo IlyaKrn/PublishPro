@@ -10,7 +10,7 @@
 
     @include('header')
     <main class="container">
-        <h1 class="page-title">Top Software</h1>
+        <h1 class="page-title">Лучшие Программы</h1>
         <div id="software-cards-container">
             <ul class="software-cards">
                 <!-- Card 1 -->

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PublishPro - Developers</title>
+    <title>PublishPro - Разработчики</title>
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
@@ -11,87 +11,89 @@
     @include('header')
     <!-- Main Content -->
     <main class="container">
-        <h1 class="page-title">Developers Directory</h1>
-
+        <h1 class="page-title">Список Разработчиков</h1>
+        
         <!-- Filters Section -->
         <div class="filters">
             <form class="search-form" id="dev-search-form">
-                <input type="text"
-                       class="search-input"
-                       placeholder="Search developers..."
+                <input type="text" 
+                       class="search-input" 
+                       placeholder="Поиск разработчиков..."
                        name="q"
-                       aria-label="Search developers">
-                <button type="submit" class="search-button">Search</button>
+                       aria-label="Поиск разработчиков">
+                <button type="submit" class="search-button">Поиск</button>
             </form>
 
-            <select class="sort-select" id="dev-sort-select" aria-label="Sort developers">
-                <option value="rating">Sort by Rating</option>
-                <option value="downloads">Sort by Downloads</option>
-                <option value="alphabetical">Sort A-Z</option>
+            <select class="sort-select" id="dev-sort-select" aria-label="Сортировать разработчиков">
+                <option value="rating">Сортировать по Рейтингу</option>
+                <option value="downloads">Сортировать по Загрузкам</option>
+                <option value="alphabetical">Сортировать по Алфавиту</option>
             </select>
         </div>
+
+        <script>
+            const developersData = [
+                {
+                    name: "DevTools Inc.",
+                    rating: 4.9,
+                    downloads: 45200,
+                    description: "Enterprise software development company specializing in developer tools and IDEs",
+                    image: "d1.png",
+                    developerLink: "d1.html"
+                },
+                {
+                    name: "CyberShield",
+                    rating: 4.8,
+                    downloads: 28700,
+                    description: "Security solutions provider focusing on encryption and cybersecurity products",
+                    image: "d2.png",
+                    developerLink: "d2.html"
+                },
+                // Добавьте других разработчиков
+            ];
+        
+            function renderDeveloperCards() {
+                const container = document.querySelector('.developers-cards');
+                container.innerHTML = developersData.map(dev => `
+                    <li class="developer-card" 
+                        data-rating="${dev.rating}" 
+                        data-downloads="${dev.downloads}" 
+                        data-name="${dev.name.toLowerCase()}">
+                        
+                        <div class="card-icon-wrapper">
+                            <a href="${dev.developerLink}" class="card-icon-link">
+                                <img src="${dev.image}" alt="${dev.name}" class="card-icon-image">
+                            </a>
+                            <div class="card-icon-info">
+                                <span class="data-rating" data-label="Rating">${dev.rating}</span>
+                                <span class="data-downloads" data-label="Downloads">${(dev.downloads/1000).toFixed(1)}K</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2>
+                                    <a href="${dev.developerLink}" class="developer-link">${dev.name}</a>
+                                </h2>
+                            </div>
+                            <p class="description">${dev.description}</p>
+                        </div>
+                    </li>
+                `).join('');
+            }
+        </script>
 
         <!-- Developer Cards -->
         <div id="developers-cards-container">
             <ul class="developers-cards">
-                <!-- Developer 1 -->
-                <li class="developer-card" data-rating="4.9" data-downloads="45200" data-name="devtools inc">
-                    <div class="card-icon-wrapper">
-                        <div class="card-icon">🏢</div>
-                        <div class="card-icon-info">
-                            <span class="data-rating" data-label="Rating">4.9</span>
-                            <span class="data-downloads" data-label="Downloads">45.2K</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h2>DevTools Inc.</h2>
-                        </div>
-                        <p class="description">Enterprise software development company specializing in developer tools and IDEs</p>
-                    </div>
-                </li>
-
-                <!-- Developer 2 -->
-                <li class="developer-card" data-rating="4.8" data-downloads="28700" data-name="cybershield">
-                    <div class="card-icon-wrapper">
-                        <div class="card-icon">🛡️</div>
-                        <div class="card-icon-info">
-                            <span class="data-rating" data-label="Rating">4.8</span>
-                            <span class="data-downloads" data-label="Downloads">28.7K</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h2>CyberShield</h2>
-                        </div>
-                        <p class="description">Security solutions provider focusing on encryption and cybersecurity products</p>
-                    </div>
-                </li>
-
-                <!-- Developer 3 -->
-                <li class="developer-card" data-rating="4.7" data-downloads="63400" data-name="creativesuite">
-                    <div class="card-icon-wrapper">
-                        <div class="card-icon">🎨</div>
-                        <div class="card-icon-info">
-                            <span class="data-rating" data-label="Rating">4.7</span>
-                            <span class="data-downloads" data-label="Downloads">63.4K</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h2>CreativeSuite</h2>
-                        </div>
-                        <p class="description">Digital creativity tools developer with focus on graphic design and multimedia software</p>
-                    </div>
-                </li>
+                <!-- Карточки будут рендериться здесь -->
             </ul>
         </div>
     </main>
-    @include('footer')
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            renderDeveloperCards();
             const devCards = Array.from(document.querySelectorAll('.developer-card'));
             const sortSelect = document.getElementById('dev-sort-select');
             const searchForm = document.getElementById('dev-search-form');
@@ -101,7 +103,7 @@
                 const sorted = devCards.sort((a, b) => {
                     const aVal = a.dataset[criteria];
                     const bVal = b.dataset[criteria];
-
+                    
                     if (criteria === 'alphabetical') {
                         return a.dataset.name.localeCompare(b.dataset.name);
                     }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разработчик - PublishPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container developer-page">
+        <script>
+            const developerData = {
+                id: "d1",
+                name: "DevTools Inc.",
+                icon: "dev1.png",
+                rating: 4.9,
+                downloads: 45200,
+                description: "Ведущая компания в разработке инструментов для разработчиков с 2020 года. Специализация: IDE, отладчики, системы контроля версий.",
+                products: [
+                    {name: "CodeMaster Pro", link: "s1d1.html"},
+                    {name: "Debugger Toolkit", link: "s1d2.html"},
+                    {name: "AI Code Assistant", link: "s1d3.html"}
+                ]
+            };
+        </script>
+
+        <!-- Основная информация -->
+        <div class="developer-header" id="developer-header"></div>
+
+        <!-- Блоки контента -->
+        <section class="content-section">
+            <h2>Описание</h2>
+            <div class="description-content" id="description-content"></div>
+        </section>
+
+        <section class="content-section">
+            <h2>Продукты</h2>
+            <div class="products-content" id="products-content"></div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // Рендеринг шапки
+                const header = document.getElementById('developer-header');
+                header.innerHTML = `
+                    <img src="${developerData.icon}" alt="Иконка разработчика" class="developer-icon">
+                    <div class="developer-titles">
+                        <h1 class="developer-name">${developerData.name}</h1>
+                        <div class="developer-stats">
+                            <span class="stat-item">
+                                <span class="stat-label">Рейтинг</span>
+                                <span class="stat-value">${developerData.rating}</span>
+                            </span>
+                            <span class="stat-item">
+                                <span class="stat-label">Загрузок</span>
+                                <span class="stat-value">${(developerData.downloads/1000).toFixed(1)}K</span>
+                            </span>
+                        </div>
+                    </div>
+                `;
+
+                // Рендеринг описания
+                document.getElementById('description-content').innerHTML = `
+                    <p>${developerData.description}</p>
+                `;
+
+                // Рендеринг продуктов
+                document.getElementById('products-content').innerHTML = `
+                    <div class="products-list">
+                        ${developerData.products.map(product => `
+                            <a href="${product.link}" class="product-link">
+                                ${product.name}
+                            </a>
+                        `).join('')}
+                    </div>
+                `;
+
+                // Обновление title страницы
+                document.title = `${developerData.name} - PublishPro`;
+            });
+        </script>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>

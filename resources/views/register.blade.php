@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PublishPro - Register</title>
+    <title>PublishPro - Регистрация</title>
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="reg-password">Password</label>
+                    <label for="reg-password">Пароль</label>
                     <input
                         type="password"
                         id="reg-password"
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="reg-confirm">Confirm Password</label>
+                    <label for="reg-confirm">Подтвердите пароль</label>
                     <input
                         type="password"
                         id="reg-confirm"
@@ -46,11 +46,11 @@
                         placeholder="••••••••">
                 </div>
 
-                <button type="submit" class="form-button register-btn">Create Account</button>
+                <button type="submit" class="form-button register-btn">Создать Аккаунт</button>
             </form>
 
             <div class="auth-links">
-                <a href="login.blade.php" class="auth-link">Already have an account? Sign In</a>
+                <a href="login.blade.php" class="auth-link">Уже есть аккаунт? Войдите</a>
             </div>
         </div>
     </main>

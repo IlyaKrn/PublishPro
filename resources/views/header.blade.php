@@ -6,12 +6,12 @@
             </a>
         </div>
         <div class="nav-links">
-            <a href="/" class="nav-button">Home</a>
-            <a href="/software" class="nav-button active">Software</a>
-            <a href="/devs" class="nav-button">Developers</a>
-            <a href="/about-us" class="nav-button">About Us</a>
-            <a href="/register" class="nav-button register-btn">Register</a>
-            <a href="/login" class="nav-button login-btn">Login</a>
+            <a href="/" class="nav-button">Домой</a>
+            <a href="/software" class="nav-button active">Программы</a>
+            <a href="/devs" class="nav-button">Разработчики</a>
+            <a href="/about-us" class="nav-button">О Нас</a>
+            <a href="/register" class="nav-button register-btn">Регистрация</a>
+            <a href="/login" class="nav-button login-btn">Логин</a>
         </div>
     </nav>
 </header>

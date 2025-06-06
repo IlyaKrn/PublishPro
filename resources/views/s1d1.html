@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Details - PublishPro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container software-page">
+        <script>
+            const softwareData = {
+                id: "s1d1",
+                name: "CodeMaster Pro",
+                developer: {
+                    name: "DevTools Inc.",
+                    link: "d1.html" // Новое поле для ссылки
+                },
+                rating: 4.8,
+                downloads: 15200,
+                icon: "s1d1.png",
+                description: "Продвинутая IDE с совместной работой в реальном времени, облачной компиляцией и AI-ассистентом для разработки.",
+                changelog: [
+                    "Версия 2.1.0 (01.06.2025): Добавлена поддержка Python 4.0",
+                    "Версия 2.0.5: Исправление ошибок компилятора"
+                ],
+                downloadLinks: [
+                    {text: "Windows (64-bit) | v2.1.0", url: "#"},
+                    {text: "macOS (Universal) | v2.1.0", url: "#"},
+                    {text: "Linux Deb Package | v2.1.0", url: "#"}
+                ]
+            };
+        </script>
+
+        <!-- Основная информация о программе -->
+        <div class="software-header" id="software-header"></div>
+
+        <!-- Блоки контента -->
+        <section class="content-section">
+            <h2>Описание</h2>
+            <div class="description-content" id="description-content"></div>
+        </section>
+
+        <section class="content-section">
+            <h2>Список изменений</h2>
+            <div class="changelog-content" id="changelog-content"></div>
+        </section>
+
+        <section class="content-section">
+            <h2>Скачать</h2>
+            <div class="downloads-content" id="downloads-content"></div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const header = document.getElementById('software-header');
+                header.innerHTML = `
+                    <img src="${softwareData.icon}" alt="Иконка программы" class="software-icon">
+                    <div class="software-titles">
+                        <h1 class="software-name">${softwareData.name}</h1>
+                        <a href="${softwareData.developer.link}" class="software-developer-link">
+                            ${softwareData.developer.name}
+                        </a>
+                    </div>
+                    <div class="software-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Рейтинг</span>
+                            <span class="stat-value">${softwareData.rating}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Загрузок</span>
+                            <span class="stat-value">${(softwareData.downloads/1000).toFixed(1)}K</span>
+                        </div>
+                    </div>
+                `;
+
+                // Рендеринг описания
+                document.getElementById('description-content').innerHTML = `
+                    <p>${softwareData.description}</p>
+                `;
+
+                // Рендеринг списка изменений
+                document.getElementById('changelog-content').innerHTML = `
+                    <ul class="changelog-list">
+                        ${softwareData.changelog.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                `;
+
+                // Рендеринг ссылок для скачивания
+                document.getElementById('downloads-content').innerHTML = `
+                    <div class="download-links">
+                        ${softwareData.downloadLinks.map(link => `
+                            <a href="${link.url}" class="download-button">
+                                ${link.text}
+                            </a>
+                        `).join('')}
+                    </div>
+                `;
+
+                // Обновление title страницы
+                document.title = `${softwareData.name} - PublishPro`;
+            });
+        </script>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>
