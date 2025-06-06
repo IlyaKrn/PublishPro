@@ -30,30 +30,39 @@
                 <option value="alphabetical">Сортировать по Алфавиту</option>
             </select>
         </div>
+        
+        <div id="software-cards-container">
+            <ul class="software-cards">
+            <?php
+                foreach ($developer_list as $developer) {
+                    echo '<li class="developer-card">';
+                    echo '<div class="card-content">';
 
-        <script>
-            const developersData = [
-                {
-                    name: "DevTools Inc.", //Имя разработчика
-                    rating: 4.9, //Рейтинг
-                    downloads: 45200, //Загрузки
-                    description: "Enterprise software development company specializing in developer tools and IDEs",
-                    //Описание
-                    //image: "d1.png", //Иконка разработчика
-                    developerLink: "d1.html" //Ссылка на страничку разраба
-                },
-                {
-                    name: "CyberShield",
-                    rating: 4.8,
-                    downloads: 28700,
-                    description: "Security solutions provider focusing on encryption and cybersecurity products",
-                    //image: "d2.png",
-                    developerLink: "d2.html"
-                },
-                // Добавьте других разработчиков
-            ];
-        </script>
-
+                    // Заголовок карточки
+                    echo '<div class="card-header">';
+                    echo '<a href="/developer/' . $developer['id'] . '" class="developer-link">';
+                    echo '<h2>' . htmlspecialchars($developer['name']) . '</h2>';
+                    echo '</a>';
+                    echo '</div>';
+                    
+                    // Блок с статами
+                    echo '<div class="card-icon-info">';
+                    echo '<span class="data-rating" data-label="Рейтинг">' . htmlspecialchars($developer['rating']) . '</span>';
+                    echo '<span class="data-downloads" data-label="Загрузок">' . htmlspecialchars($developer['downloads']) . '</span>';
+                    echo '</div>';
+                    echo '</div>';
+                    
+                    // Блок описания
+                    echo '<section class="description">';
+                    echo '<div class="description-content">' . nl2br(htmlspecialchars($developer['description'])) . '</div>';
+                    echo '</section>';
+                    
+                    echo '</div>'; // закрываем card-content
+                    echo '</li>'; // закрываем developer-card
+                }
+            ?>
+            </ul>
+        </div>
         <!-- Developer Cards -->
         <div id="developers-cards-container">
             <ul class="developers-cards">

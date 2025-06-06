@@ -10,48 +10,65 @@
     <div id="header-placeholder"></div>
 
     <main class="container software-page">
-        <script>
-            const softwareData = {
-                name: "CodeMaster Pro", // Имя софта
-                developer: {
-                    name: "DevTools Inc.", // Имя разраба
-                    link: "d1.html" // Ссылка на страничку разраба
-                },
-                rating: 4.8, //Оценка
-                downloads: 15200, //Загрузки
-                //icon: "s1d1.png", //Иконка Программы
-                description: "Продвинутая IDE с совместной работой в реальном времени, облачной компиляцией и AI-ассистентом для разработки.",
-                //Описание
-                changelog: [ //Изменения
-                    "Версия 2.1.0 (01.06.2025): Добавлена поддержка Python 4.0",
-                    "Версия 2.0.5: Исправление ошибок компилятора"
-                ],
-                downloadLinks: [ //Ссылки на скачивание
-                    {text: "Windows (64-bit) | v2.1.0", url: "#"}, //Текст и адрес
-                    {text: "macOS (Universal) | v2.1.0", url: "#"},
-                    {text: "Linux Deb Package | v2.1.0", url: "#"}
-                ]
-            };
-        </script>
-
-        <!-- Основная информация о программе -->
-        <div class="software-header" id="software-header"></div>
-
-        <!-- Блоки контента -->
-        <section class="content-section">
-            <h2>Описание</h2>
-            <div class="description-content" id="description-content"></div>
-        </section>
-
-        <section class="content-section">
-            <h2>Список изменений</h2>
-            <div class="changelog-content" id="changelog-content"></div>
-        </section>
-
-        <section class="content-section">
-            <h2>Скачать</h2>
-            <div class="downloads-content" id="downloads-content"></div>
-        </section>
+        <div id="software-cards-container">
+            <ul class="software-cards">
+            <?php
+                foreach ($software_pages as $software) {
+                    echo '<li class="software-card">';
+                    echo '<div class="card-content">';
+                            
+                    // Заголовок и основная информация
+                    echo '<div class="card-header">';
+                    echo '<a href="/software/' . $software['id'] . '" class="software-link">';
+                    echo '<h2>' . htmlspecialchars($software['name']) . '</h2>';
+                    echo '</a>';
+                    echo '<a href="/developer/' . $software['developer_id'] . '" class="developer">';
+                    echo htmlspecialchars($software['developer_name']);
+                    echo '</a>';
+                    echo '</div>';
+                        
+                    // Статистика
+                    echo '<div class="stats">';
+                    echo '<span class="data-rating" data-label="Рейтинг">' . htmlspecialchars($software['rating']) . '</span>';
+                    echo '<span class="data-downloads" data-label="Загрузок">' . htmlspecialchars($software['downloads']) . '</span>';
+                    echo '</div>';
+                    
+                    // Описание
+                    echo '<section class="description">';
+                    echo '<div class="description-content">' . nl2br(htmlspecialchars($software['description'])) . '</div>';
+                    echo '</section>';
+                    
+                    // История изменений
+                    if (!empty($software['changelog'])) {
+                        echo '<section class="content-section">';
+                        echo '<h2>История изменений</h2>';
+                        echo '<ul class="changelog-list">';
+                        foreach (explode("\n", $software['changelog']) as $change) {
+                            echo '<li>' . htmlspecialchars(trim($change)) . '</li>';
+                        }
+                    echo '</ul>';
+                    echo '</section>';
+                    }
+                    
+                    // Ссылки для скачивания
+                    if (!empty($software['downloads'])) {
+                        echo '<section class="content-section">';
+                        echo '<h2>Скачать</h2>';
+                        echo '<div class="download-links">';
+                        foreach ($software['downloads'] as $link) {
+                            echo '<a href="' . htmlspecialchars($link['url']) . '" class="download-button">';
+                            echo htmlspecialchars($link['label']);
+                            echo '</a>';
+                        }
+                        echo '</div>';
+                        echo '</section>';
+                    }
+                    echo '</div>'; // закрываем card-content
+                    echo '</li>'; // закрываем software-card
+                }
+            ?>
+            </ul>
+        </div>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {

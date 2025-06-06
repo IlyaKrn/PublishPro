@@ -10,35 +10,47 @@
     <div id="header-placeholder"></div>
 
     <main class="container developer-page">
-        <script>
-            const developerData = {
-                name: "DevTools Inc.", //Имя разраба
-                //icon: "dev1.png", //Иконка разраба
-                rating: 4.9, //Оценка
-                downloads: 45200, //Загрузки
-                description: "Ведущая компания в разработке инструментов для разработчиков с 2020 года. Специализация: IDE, отладчики, системы контроля версий.",
-                // Описание
-                products: [ // Продукты разраба
-                    {name: "CodeMaster Pro", link: "s1d1.html"}, //Имя и ссылка
-                    {name: "Debugger Toolkit", link: "s1d2.html"},
-                    {name: "AI Code Assistant", link: "s1d3.html"}
-                ]
-            };
-        </script>
-
-        <!-- Основная информация -->
-        <div class="developer-header" id="developer-header"></div>
-
-        <!-- Блоки контента -->
-        <section class="content-section">
-            <h2>Описание</h2>
-            <div class="description-content" id="description-content"></div>
-        </section>
-
-        <section class="content-section">
-            <h2>Продукты</h2>
-            <div class="products-content" id="products-content"></div>
-        </section>
+        <div id="software-cards-container">
+            <ul class="software-cards">
+                <?php
+                foreach ($developer_pages as $developer) {
+                    echo ' <li class="developer-card">';
+                    echo ' <div class="card-content">';
+                    echo ' <div class="card-header">';
+                    echo ' <h2>' . htmlspecialchars($developer['name']) . '</h2>';
+                    echo ' <span class="developer-id">ID: ' . htmlspecialchars($developer['id']) . '</span>';
+                    echo ' </div>';
+                
+                    echo ' <div class="stats">';
+                    echo ' <span class="data-rating" data-label="Рейтинг">' . htmlspecialchars($developer['rating']) . '</span>';
+                    echo ' <span class="data-downloads" data-label="Загрузок">' . htmlspecialchars($developer['downloads']) . '</span>';
+                    echo ' </div>';
+                
+                    echo ' <section class="description">';
+                    echo ' <div class="description-content">' . nl2br(htmlspecialchars($developer['description'])) . '</div>';
+                    echo ' </section>';
+                
+                    if (!empty($developer['products'])) {
+                        echo ' <section class="products-section">';
+                        echo ' <h3>Продукты разработчика</h3>';
+                        echo ' <ul class="products-list">';
+                        foreach ($developer['products'] as $product) {
+                            echo ' <li>';
+                            echo ' <a href="/software/' . htmlspecialchars($product['id']) . '" class="product-link">';
+                            echo ' ' . htmlspecialchars($product['name']);
+                            echo ' </a>';
+                            echo ' </li>';
+                        }
+                        echo ' </ul>';
+                        echo ' </section>';
+                    }
+                
+                    echo ' </div>';
+                    echo ' </li>';
+                }
+                ?>
+            </ul>
+        </div>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {

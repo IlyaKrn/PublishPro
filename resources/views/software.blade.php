@@ -31,38 +31,27 @@
             </select>
         </div>
 
-        <script>
-            const softwareData = [
-                {
-                    name: "CodeMaster Pro", //Имя программы
-                    developer: "DevTools Inc.", //Имя разраба
-                    rating: 4.8, //Рейтинг
-                    downloads: 15200, // Загрузки
-                    description: "Advanced IDE with real-time collaboration, cloud compilation and AI-assisted coding",
-                    //Описание
-                    //image: "s1d1.png", //Иконка приложения
-                    softwareLink: "s1d1.html", //Ссылка на страничку приложения
-                    developerLink: "d1.html" //Ссылка на страничку разработчика
-                },
-
-                {
-                    name: "Penis",
-                    developer: "Dildo",
-                    rating: 5.0,
-                    downloads: 152000,
-                    description: "Advanced pisya with real-time collaboration, cloud compilation and AI-assisted coding",
-                    //image: "s1d2.png",
-                    softwareLink: "s1d2.html",
-                    developerLink: "d2.html"
-                },
-                // Добавьте другие программы по аналогии
-            ];
-        </script>
-
-        <!-- Software Cards -->
         <div id="software-cards-container">
             <ul class="software-cards">
-                <!-- Карточки будут рендериться здесь -->
+            <?php
+                foreach ($sowtware_list as $software) {
+                    echo '<li class="software-card">';
+                    echo '<div class="card-content">';
+                    echo '<div class="card-header">';
+                    echo '<a href="/software/' . $software['id'] . '" class="software-link"><h2>' . htmlspecialchars($software['name']) . '</h2></a>';
+                    echo '<a href="/developer/' . $software['developer_id'] . '" class="developer">' . htmlspecialchars($software['developer_name']) . '</a>''</div>';
+                    echo '<div class="stats">';
+                    echo '<span class="data-rating" data-label="Рейтинг">' . $software['rating'] . '</span>';
+                    echo '<span class="data-downloads" data-label="Загрузок">' . $software['downloads'] . '</span>';
+                    echo '</div>';
+                    echo '<section class="description">';
+                    echo '<h3>Описание</h3>';
+                    echo '<div class="description-content">' . nl2br(htmlspecialchars($software['description'])) . '</div>';
+                    echo '</section>';
+                    echo '</div>';
+                    echo '</li>';
+                }
+            ?>
             </ul>
         </div>
     </main>

@@ -88,10 +88,8 @@ body {
 }
 
 .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .developer {
@@ -100,16 +98,36 @@ body {
 }
 
 .stats {
-    display: flex;
-    gap: 1.5rem;
-    color: #666;
-    flex-wrap: wrap;
+    margin: 1rem 0;
 }
 
 .stats span {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+}
+
+.software-link h2 {
+    color: #2A4E68;
+    margin: 0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.software-link:hover h2 {
+    color: #43B0F1;
+}
+
+.description h3 {
+    color: #444;
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.description-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
 }
 
 /* Filters Section */
@@ -318,6 +336,32 @@ body {
     background: #e8f4ff;
 }
 
+.developer-card .card-icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.developer-card .card-icon-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.developer-card .description-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    border-top: 2px solid #f0f7ff;
+    padding-top: 1rem;
+}
+
+.developer-card h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
 /* Mobile adaptation for developers */
 @media (max-width: 768px) {
     .developer-card .card-icon-wrapper {
@@ -328,6 +372,68 @@ body {
     .developer-card .card-icon-info {
         flex-direction: row;
         gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .developer-card .card-icon-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .developer-card .card-icon-info {
+        align-items: center;
+    }
+    
+    .developer-card .card-icon-image {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Стили для истории изменений */
+.changelog-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.changelog-list li {
+    padding: 0.5rem 1rem;
+    margin: 0.3rem 0;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Адаптация для секций */
+.content-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f0f7ff;
+}
+
+.download-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .changelog-list {
+        padding: 0.5rem;
+    }
+    
+    .download-links {
+        flex-direction: column;
+    }
+    
+    .download-button {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -573,14 +679,39 @@ body {
     color: #43B0F1;
 }
 
-.developer-link {
-    color: #43B0F1;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
+.developer-id {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 1rem;
 }
 
-.developer-link:hover {
-    opacity: 0.8;
+.products-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f0f7ff;
+}
+
+.products-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.products-list li {
+    padding: 0.5rem 1rem;
+    margin: 0.3rem 0;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.product-link {
+    color: #2A4E68;
+    text-decoration: none;
+}
+
+.product-link:hover {
+    color: #43B0F1;
 }
 
 .card-icon-link {
@@ -645,38 +776,10 @@ body {
     color: #2A4E68;
 }
 
-.content-section {
-    margin-bottom: 3rem;
-}
-
 .content-section h2 {
     border-bottom: 2px solid #43B0F1;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
-}
-
-.changelog-list {
-    list-style-type: none;
-    padding-left: 1rem;
-}
-
-.changelog-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.8rem;
-}
-
-.changelog-list li::before {
-    content: "•";
-    color: #43B0F1;
-    position: absolute;
-    left: 0;
-}
-
-.download-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .download-button {
