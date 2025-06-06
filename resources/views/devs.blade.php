@@ -39,7 +39,7 @@
                     downloads: 45200, //Загрузки
                     description: "Enterprise software development company specializing in developer tools and IDEs",
                     //Описание
-                    image: "d1.png", //Иконка разработчика
+                    //image: "d1.png", //Иконка разработчика
                     developerLink: "d1.html" //Ссылка на страничку разраба
                 },
                 {
@@ -47,7 +47,7 @@
                     rating: 4.8,
                     downloads: 28700,
                     description: "Security solutions provider focusing on encryption and cybersecurity products",
-                    image: "d2.png",
+                    //image: "d2.png",
                     developerLink: "d2.html"
                 },
                 // Добавьте других разработчиков

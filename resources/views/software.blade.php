@@ -40,7 +40,7 @@
                     downloads: 15200, // Загрузки
                     description: "Advanced IDE with real-time collaboration, cloud compilation and AI-assisted coding",
                     //Описание
-                    image: "s1d1.png", //Иконка приложения
+                    //image: "s1d1.png", //Иконка приложения
                     softwareLink: "s1d1.html", //Ссылка на страничку приложения
                     developerLink: "d1.html" //Ссылка на страничку разработчика
                 },
@@ -51,7 +51,7 @@
                     rating: 5.0,
                     downloads: 152000,
                     description: "Advanced pisya with real-time collaboration, cloud compilation and AI-assisted coding",
-                    image: "s1d2.png",
+                    //image: "s1d2.png",
                     softwareLink: "s1d2.html",
                     developerLink: "d2.html"
                 },

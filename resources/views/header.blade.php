@@ -1,10 +1,10 @@
 <header class="header">
     <nav class="navbar">
-        <div class="logo">
+        <!-- <div class="logo">
             <a href="index.blade.php">
                 <img src="logo-placeholder.png" alt="PublishPro Logo">
             </a>
-        </div>
+        </div> -->
         <div class="nav-links">
             <a href="/" class="nav-button">Домой</a>
             <a href="/software" class="nav-button active">Программы</a>
