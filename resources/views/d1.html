@@ -12,14 +12,14 @@
     <main class="container developer-page">
         <script>
             const developerData = {
-                id: "d1",
-                name: "DevTools Inc.",
-                icon: "dev1.png",
-                rating: 4.9,
-                downloads: 45200,
+                name: "DevTools Inc.", //Имя разраба
+                icon: "dev1.png", //Иконка разраба
+                rating: 4.9, //Оценка
+                downloads: 45200, //Загрузки
                 description: "Ведущая компания в разработке инструментов для разработчиков с 2020 года. Специализация: IDE, отладчики, системы контроля версий.",
-                products: [
-                    {name: "CodeMaster Pro", link: "s1d1.html"},
+                // Описание
+                products: [ // Продукты разраба
+                    {name: "CodeMaster Pro", link: "s1d1.html"}, //Имя и ссылка
                     {name: "Debugger Toolkit", link: "s1d2.html"},
                     {name: "AI Code Assistant", link: "s1d3.html"}
                 ]
@@ -42,24 +42,6 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                // Рендеринг шапки
-                const header = document.getElementById('developer-header');
-                header.innerHTML = `
-                    <img src="${developerData.icon}" alt="Иконка разработчика" class="developer-icon">
-                    <div class="developer-titles">
-                        <h1 class="developer-name">${developerData.name}</h1>
-                        <div class="developer-stats">
-                            <span class="stat-item">
-                                <span class="stat-label">Рейтинг</span>
-                                <span class="stat-value">${developerData.rating}</span>
-                            </span>
-                            <span class="stat-item">
-                                <span class="stat-label">Загрузок</span>
-                                <span class="stat-value">${(developerData.downloads/1000).toFixed(1)}K</span>
-                            </span>
-                        </div>
-                    </div>
-                `;
 
                 // Рендеринг описания
                 document.getElementById('description-content').innerHTML = `

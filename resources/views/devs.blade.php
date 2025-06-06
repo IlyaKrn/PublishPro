@@ -34,12 +34,13 @@
         <script>
             const developersData = [
                 {
-                    name: "DevTools Inc.",
-                    rating: 4.9,
-                    downloads: 45200,
+                    name: "DevTools Inc.", //Имя разработчика
+                    rating: 4.9, //Рейтинг
+                    downloads: 45200, //Загрузки
                     description: "Enterprise software development company specializing in developer tools and IDEs",
-                    image: "d1.png",
-                    developerLink: "d1.html"
+                    //Описание
+                    image: "d1.png", //Иконка разработчика
+                    developerLink: "d1.html" //Ссылка на страничку разраба
                 },
                 {
                     name: "CyberShield",
@@ -51,36 +52,6 @@
                 },
                 // Добавьте других разработчиков
             ];
-        
-            function renderDeveloperCards() {
-                const container = document.querySelector('.developers-cards');
-                container.innerHTML = developersData.map(dev => `
-                    <li class="developer-card" 
-                        data-rating="${dev.rating}" 
-                        data-downloads="${dev.downloads}" 
-                        data-name="${dev.name.toLowerCase()}">
-                        
-                        <div class="card-icon-wrapper">
-                            <a href="${dev.developerLink}" class="card-icon-link">
-                                <img src="${dev.image}" alt="${dev.name}" class="card-icon-image">
-                            </a>
-                            <div class="card-icon-info">
-                                <span class="data-rating" data-label="Rating">${dev.rating}</span>
-                                <span class="data-downloads" data-label="Downloads">${(dev.downloads/1000).toFixed(1)}K</span>
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="card-header">
-                                <h2>
-                                    <a href="${dev.developerLink}" class="developer-link">${dev.name}</a>
-                                </h2>
-                            </div>
-                            <p class="description">${dev.description}</p>
-                        </div>
-                    </li>
-                `).join('');
-            }
         </script>
 
         <!-- Developer Cards -->
@@ -90,10 +61,8 @@
             </ul>
         </div>
     </main>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            renderDeveloperCards();
             const devCards = Array.from(document.querySelectorAll('.developer-card'));
             const sortSelect = document.getElementById('dev-sort-select');
             const searchForm = document.getElementById('dev-search-form');
@@ -129,5 +98,6 @@
             searchInput.addEventListener('input', () => filterCards(searchInput.value));
         });
     </script>
+
 </body>
 </html>

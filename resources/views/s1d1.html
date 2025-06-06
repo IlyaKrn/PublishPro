@@ -12,22 +12,22 @@
     <main class="container software-page">
         <script>
             const softwareData = {
-                id: "s1d1",
-                name: "CodeMaster Pro",
+                name: "CodeMaster Pro", // Имя софта
                 developer: {
-                    name: "DevTools Inc.",
-                    link: "d1.html" // Новое поле для ссылки
+                    name: "DevTools Inc.", // Имя разраба
+                    link: "d1.html" // Ссылка на страничку разраба
                 },
-                rating: 4.8,
-                downloads: 15200,
-                icon: "s1d1.png",
+                rating: 4.8, //Оценка
+                downloads: 15200, //Загрузки
+                icon: "s1d1.png", //Иконка Программы
                 description: "Продвинутая IDE с совместной работой в реальном времени, облачной компиляцией и AI-ассистентом для разработки.",
-                changelog: [
+                //Описание
+                changelog: [ //Изменения
                     "Версия 2.1.0 (01.06.2025): Добавлена поддержка Python 4.0",
                     "Версия 2.0.5: Исправление ошибок компилятора"
                 ],
-                downloadLinks: [
-                    {text: "Windows (64-bit) | v2.1.0", url: "#"},
+                downloadLinks: [ //Ссылки на скачивание
+                    {text: "Windows (64-bit) | v2.1.0", url: "#"}, //Текст и адрес
                     {text: "macOS (Universal) | v2.1.0", url: "#"},
                     {text: "Linux Deb Package | v2.1.0", url: "#"}
                 ]
@@ -55,26 +55,6 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const header = document.getElementById('software-header');
-                header.innerHTML = `
-                    <img src="${softwareData.icon}" alt="Иконка программы" class="software-icon">
-                    <div class="software-titles">
-                        <h1 class="software-name">${softwareData.name}</h1>
-                        <a href="${softwareData.developer.link}" class="software-developer-link">
-                            ${softwareData.developer.name}
-                        </a>
-                    </div>
-                    <div class="software-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Рейтинг</span>
-                            <span class="stat-value">${softwareData.rating}</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-label">Загрузок</span>
-                            <span class="stat-value">${(softwareData.downloads/1000).toFixed(1)}K</span>
-                        </div>
-                    </div>
-                `;
 
                 // Рендеринг описания
                 document.getElementById('description-content').innerHTML = `

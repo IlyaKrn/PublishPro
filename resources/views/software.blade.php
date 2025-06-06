@@ -34,14 +34,15 @@
         <script>
             const softwareData = [
                 {
-                    name: "CodeMaster Pro",
-                    developer: "DevTools Inc.",
-                    rating: 4.8,
-                    downloads: 15200,
+                    name: "CodeMaster Pro", //Имя программы
+                    developer: "DevTools Inc.", //Имя разраба
+                    rating: 4.8, //Рейтинг
+                    downloads: 15200, // Загрузки
                     description: "Advanced IDE with real-time collaboration, cloud compilation and AI-assisted coding",
-                    image: "s1d1.png",
-                    softwareLink: "s1d1.html",
-                    developerLink: "d1.html"
+                    //Описание
+                    image: "s1d1.png", //Иконка приложения
+                    softwareLink: "s1d1.html", //Ссылка на страничку приложения
+                    developerLink: "d1.html" //Ссылка на страничку разработчика
                 },
 
                 {
@@ -56,39 +57,6 @@
                 },
                 // Добавьте другие программы по аналогии
             ];
-        
-            function renderSoftwareCards() {
-                const container = document.querySelector('.software-cards');
-                container.innerHTML = softwareData.map(software => `
-                    <li class="software-card" 
-                        data-rating="${software.rating}" 
-                        data-downloads="${software.downloads}" 
-                        data-name="${software.name.toLowerCase()}">
-                        
-                        <div class="card-icon-wrapper">
-                            <a href="${software.softwareLink}" class="card-icon-link">
-                                <img src="${software.image}" alt="${software.name}" class="card-icon-image">
-                            </a>
-                            <div class="card-icon-info">
-                                <span class="data-rating" data-label="Rating">${software.rating}</span>
-                                <span class="data-downloads" data-label="Downloads">${(software.downloads/1000).toFixed(1)}K</span>
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="card-header">
-                                <h2>
-                                    <a href="${software.softwareLink}" class="software-link">${software.name}</a>
-                                    <span class="developer">
-                                        by <a href="${software.developerLink}" class="developer-link">${software.developer}</a>
-                                    </span>
-                                </h2>
-                            </div>
-                            <p class="description">${software.description}</p>
-                        </div>
-                    </li>
-                `).join('');
-            }
         </script>
 
         <!-- Software Cards -->
@@ -102,7 +70,6 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            renderSoftwareCards();
             const cards = Array.from(document.querySelectorAll('.software-card'));
             const sortSelect = document.getElementById('sort-select');
             const searchForm = document.getElementById('search-form');
