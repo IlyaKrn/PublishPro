@@ -13,73 +13,22 @@
         <h1 class="page-title">Лучшие Программы</h1>
         <div id="software-cards-container">
             <ul class="software-cards">
-                <!-- Card 1 -->
-                <li class="software-card" data-rating="4.8" data-downloads="15200" data-name="codemaster pro">
-                    <div class="card-icon-wrapper">
-                        <div class="card-icon">💻</div>
-                        <div class="card-icon-info">
-                            <span class="data-rating" data-label="Rating">4.8</span>
-                            <span class="data-downloads" data-label="Downloads">15.2K</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h2>CodeMaster Pro <span class="developer">by DevTools Inc.</span></h2>
-                        </div>
-                        <p class="description">Advanced IDE with real-time collaboration, cloud compilation and AI-assisted coding</p>
-                    </div>
-                </li>
-
-                <!-- Card 2 -->
-                <li class="software-card" data-rating="4.9" data-downloads="9700" data-name="securevault">
-                    <div class="card-icon-wrapper">
-                        <div class="card-icon">🔐</div>
-                        <div class="card-icon-info">
-                            <span class="data-rating" data-label="Rating">4.9</span>
-                            <span class="data-downloads" data-label="Downloads">9.7K</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h2>SecureVault <span class="developer">by CyberShield</span></h2>
-                        </div>
-                        <p class="description">Military-grade encryption solution with multi-factor authentication</p>
-                    </div>
-                </li>
-
-                <!-- Card 3 -->
-                <li class="software-card" data-rating="4.6" data-downloads="23100" data-name="pixelartist">
-                    <div class="card-icon-wrapper">
-                        <div class="card-icon">🖼️</div>
-                        <div class="card-icon-info">
-                            <span class="data-rating" data-label="Rating">4.6</span>
-                            <span class="data-downloads" data-label="Downloads">23.1K</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h2>PixelArtist <span class="developer">by CreativeSuite</span></h2>
-                        </div>
-                        <p class="description">Professional raster graphics editor with layer support and 100+ filters</p>
-                    </div>
-                </li>
-
-                <!-- Card 4 -->
-                <li class="software-card" data-rating="4.7" data-downloads="5400" data-name="dataanalyzer">
-                    <div class="card-icon-wrapper">
-                        <div class="card-icon">📊</div>
-                        <div class="card-icon-info">
-                            <span class="data-rating" data-label="Rating">4.7</span>
-                            <span class="data-downloads" data-label="Downloads">5.4K</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h2>DataAnalyzer <span class="developer">by StatsLab</span></h2>
-                        </div>
-                        <p class="description">Statistical analysis software with R/Python integration and visualization tools</p>
-                    </div>
-                </li>
+                <?php
+                    foreach ($top_software as $software){
+                        //здесь надо вывести оставшиеся значения по аналогии с уже готовыми (сделать слили и html)
+/id
+//name
+//description
+//developer_id
+//developer_name
+//rating
+//downloads
+                        echo '<li>';
+                        echo '<a href="/software/' . $software['id'] . '" class="software-header">' . $software['name'] . '</a>';
+                        echo '<section class="content-section"><h2>Описание</h2><div class="description-content">' . $software['description'] . '</div></section>';
+                        echo '</li>';
+                    }
+                ?>
             </ul>
         </div>
     </main>

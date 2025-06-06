@@ -3,7 +3,20 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    $topSoftware = array();
+
+    for ($i = 0; $i < 10; $i++) {
+        $topSoftware[] = [
+            'id' => $i,
+            'name' => 'software ' . $i,
+            'description' => 'description description description description description description description description description description ' . $i,
+            'developer_id' => $i,
+            'developer_name' => 'developer ' . $i,
+            'rating' => '4.8',
+            'downloads' => '1000+',
+        ];
+    }
+    return view('index', ['top_software' => $topSoftware]);
 });
 Route::get('/about-us', function () {
     return view('about-us');
