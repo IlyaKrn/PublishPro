@@ -2,11 +2,10 @@
     <nav class="navbar">
         <div class="logo">
             <a href="index.blade.php">
-                <img src="logo-placeholder.png" alt="PublishPro Logo">
+                <img src="logo.png" alt="PublishPro Logo">
             </a>
         </div>
         <div class="nav-links">
-            <a href="/" class="nav-button">Домой</a>
             <a href="/software" class="nav-button active">Программы</a>
             <a href="/devs" class="nav-button">Разработчики</a>
             <a href="/about-us" class="nav-button">О Нас</a>
