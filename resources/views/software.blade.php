@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PublishPro - Каталог Программ</title>
-    @include('header')
-    @include('footer')
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
@@ -57,49 +55,5 @@
             </ul>
         </div>
     </main>
-
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = Array.from(document.querySelectorAll('.software-card'));
-            const sortSelect = document.getElementById('sort-select');
-            const searchForm = document.getElementById('search-form');
-            const searchInput = document.querySelector('.search-input');
-
-            // Sorting functionality
-            const sortCards = (criteria) => {
-                const sorted = cards.sort((a, b) => {
-                    const aVal = a.dataset[criteria];
-                    const bVal = b.dataset[criteria];
-
-                    if (criteria === 'alphabetical') {
-                        return a.dataset.name.localeCompare(b.dataset.name);
-                    }
-                    return parseFloat(bVal) - parseFloat(aVal);
-                });
-
-                document.querySelector('.software-cards').innerHTML = '';
-                sorted.forEach(card => document.querySelector('.software-cards').appendChild(card));
-            };
-
-            // Search functionality
-            const filterCards = (query) => {
-                cards.forEach(card => {
-                    const matches = card.dataset.name.includes(query.toLowerCase());
-                    card.style.display = matches ? 'flex' : 'none';
-                });
-            };
-
-            // Event listeners
-            sortSelect.addEventListener('change', (e) => sortCards(e.target.value));
-
-            searchForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                filterCards(searchInput.value);
-            });
-
-            searchInput.addEventListener('input', () => filterCards(searchInput.value));
-        });
-    </script>
 </body>
 </html>

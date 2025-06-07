@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PublishPro</title>
-    @include('header')
-    @include('footer')
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
@@ -24,7 +22,7 @@
                     echo '<a href="/developer/' . $software['developer_id'] . '" class="developer">' . htmlspecialchars($software['developer_name']) . '</a></div>';
                     echo '<div class="stats">';
                     echo '<span class="data-rating" data-label="Рейтинг">' . $software['rating'] . '</span>';
-                    echo '<span class="data-downloads" data-label="Загрузок">' . $software['downloads'] . '</span>';
+                    echo '<span class="data-downloads" data-label="Загрузок">' . $software['downloads'] . ' Скачиваний</span>';
                     echo '</div>';
                     echo '<section class="description">';
                     echo '<h3>Описание</h3>';

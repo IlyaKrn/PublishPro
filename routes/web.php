@@ -49,11 +49,30 @@ Route::get('/devs', function () {
 });
 
 Route::get('/software/{id}', function ($id) {
-    return view('software_info');
+    $software = [
+        'description' => 'wareawrgfearfg',
+        'id' => 'software ',
+        'name' => 'description description description description description description description description description description ',
+        'developer_id' => 'software ',
+        'developer_name' => 'description description description description description description description description description description ',
+        'rating' => 'sdfgdg',
+        'downloads' => 'developer ',
+        'chanlelog' => array(),
+        'downloads_list' => array(),
+    ];
+    return view('software_info', ['software' => $software]);
 });
 
 Route::get('/devs/{id}', function ($id) {
-    return view('dev_info');
+    $developer = [
+        'description' => 'wareawrgfearfg',
+        'id' => 'software ',
+        'name' => 'description description description description description description description description description description ',
+         'rating' => 'sdfgdg',
+        'downloads' => 'developer ',
+        'products' => array(),
+    ];
+    return view('dev_info', ['developer' => $developer]);
 });
 
 Route::get('/login', function () {

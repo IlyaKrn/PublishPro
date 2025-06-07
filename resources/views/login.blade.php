@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PublishPro - Логин</title>
-    @include('header')
-    @include('footer')
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
@@ -47,14 +45,5 @@
         </div>
     </main>
     @include('footer')
-
-
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add login logic here
-            alert('Login functionality coming soon!');
-        });
-    </script>
 </body>
 </html>
