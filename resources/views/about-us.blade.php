@@ -9,7 +9,6 @@
 <body>
 
     @include('header')
-    <!-- Main Content -->
     <main class="container">
         <h1 class="page-title">Информация</h1>
 
@@ -25,7 +24,7 @@
 3. Не выдавайте чужие программы за свои</p>
         </div>
     </main>
-
     @include('footer')
+
 </body>
 </html>

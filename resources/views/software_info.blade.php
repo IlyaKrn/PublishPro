@@ -13,57 +13,37 @@
         <div id="software-cards-container">
             <ul class="software-cards">
             <?php
-                echo '<li class="software-card">';
-                echo '<div class="card-content">';
+                echo '<li class="software-card"><div class="card-content">';
 
-                // Заголовок и основная информация
                 echo '<div class="card-header">';
-                echo '<a href="/software/' . $software['id'] . '" class="software-link">';
-                echo '<h2>' . htmlspecialchars($software['name']) . '</h2>';
-                echo '</a>';
-                echo '<a href="/developer/' . $software['developer_id'] . '" class="developer">';
-                echo htmlspecialchars($software['developer_name']);
-                echo '</a>';
-                echo '</div>';
+                echo '<h2>' . $software['name'] . '</h2>';
+                echo '<a href="/developer/' . $software['developer_id'] . '" class="developer">' . $software['developer_name'] . '</a></div>';
 
-                // Статистика
                 echo '<div class="stats">';
-                echo '<span class="data-rating" data-label="Рейтинг">' . htmlspecialchars($software['rating']) . '</span>';
-                echo '<span class="data-downloads" data-label="Загрузок">' . htmlspecialchars($software['downloads']) . '</span>';
+                echo '<span class="data-rating" data-label="Рейтинг">' . $software['rating'] . '</span>';
+                echo '<span class="data-downloads" data-label="Загрузок">' . $software['downloads'] . '</span>';
                 echo '</div>';
 
-                // Описание
                 echo '<section class="description">';
-                echo '<div class="description-content">' . nl2br(htmlspecialchars($software['description'])) . '</div>';
+                echo '<div class="description-content">' . $software['description'] . '</div>';
                 echo '</section>';
 
-                    // История изменений
                 if (!empty($software['changelog'])) {
-                    echo '<section class="content-section">';
-                    echo '<h2>История изменений</h2>';
-                    echo '<ul class="changelog-list">';
-                    foreach (explode("\n", $software['changelog']) as $change) {
-                        echo '<li>' . htmlspecialchars(trim($change)) . '</li>';
+                    echo '<section class="content-section"><h2>История изменений</h2><ul class="changelog-list">';
+                    foreach ($software['changelog'] as $change) {
+                        echo '<li>' . $change['description'] . '</li>';
                     }
-                echo '</ul>';
-                echo '</section>';
+                    echo '</ul></section>';
                 }
 
-                // Ссылки для скачивания
                 if (!empty($software['downloads_list'])) {
-                    echo '<section class="content-section">';
-                    echo '<h2>Скачать</h2>';
-                    echo '<div class="download-links">';
+                    echo '<section class="content-section"><h2>Скачать</h2><div class="download-links">';
                     foreach ($software['downloads_list'] as $link) {
-                        echo '<a href="' . htmlspecialchars($link['url']) . '" class="download-button">';
-                        echo htmlspecialchars($link['label']);
-                        echo '</a>';
+                        echo '<a href="' . $link['url'] . '" class="download-button">' . $link['label'] . '</a>';
                     }
-                    echo '</div>';
-                    echo '</section>';
+                    echo '</div></section>';
                 }
-                echo '</div>'; // закрываем card-content
-                echo '</li>'; // закрываем software-card
+                echo '</div></li>'; // закрываем software-card
 
             ?>
             </ul>
