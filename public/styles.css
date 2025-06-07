@@ -911,3 +911,40 @@ a:hover {
 .logo img:hover {
   opacity: 0.9;
 }
+
+.software-section {
+    margin: 2rem 0;
+    border-top: 2px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.add-software-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.add-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #43B0F1;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
+}
+
+.add-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 176, 241, 0.3);
+}

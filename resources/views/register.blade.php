@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PublishPro - Регистрация</title>
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
+    <style>
+        /* Добавленные стили */
+        .software-section {
+            margin: 2rem 0;
+            border-top: 2px solid #eee;
+            padding-top: 1.5rem;
+        }
+
+        .add-software-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .add-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #43B0F1;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .add-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
 
@@ -22,6 +56,16 @@
                         name="email"
                         required
                         placeholder="user@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="dev-description">Описание разработчика</label>
+                    <textarea
+                        id="dev-description"
+                        class="form-input"
+                        name="description"
+                        rows="4"
+                        placeholder="Расскажите о себе и вашем опыте"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -44,6 +88,14 @@
                         name="confirm_password"
                         required
                         placeholder="••••••••">
+                </div>
+
+                <!-- Секция добавления софта -->
+                <div class="software-section">
+                    <div class="add-software-header">
+                        <h3>Добавить софт</h3>
+                        <button type="button" class="add-btn">+</button>
+                    </div>
                 </div>
 
                 <button type="submit" class="form-button register-btn">Создать Аккаунт</button>

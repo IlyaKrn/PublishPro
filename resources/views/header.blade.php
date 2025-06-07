@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="logo">
             <a href="index.blade.php">
-                <img src="logo.png" alt="PublishPro Logo">
+                <img src="{{ asset('logo.png') }}" alt="PublishPro Logo">
             </a>
         </div>
         <div class="nav-links">
